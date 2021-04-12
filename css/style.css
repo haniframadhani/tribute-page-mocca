@@ -10,7 +10,9 @@ body {
 nav {
 				width: 100%;
 				background-color: #f25883;
-				box-shadow: 0 2px 10px rgba(0,0,0, .3)
+				box-shadow: 0 2px 10px rgba(0,0,0, .3);
+				position: fixed;
+				z-index: 10;
 				}
 nav img {
 				width: 150px;
@@ -24,15 +26,15 @@ nav img {
 				color: #FAA627;
 				}
 .gambar img {
+	margin-top: 50px;
 				width: 100%;
 				}
 #main h1 {
 				margin-top: -170px;
-				-webkit-text-stroke: 1px #e28a05;
+				text-shadow: 0 0 rgba(0,0,0, 1);
 				}
 #main p {
 				margin: 0;
-				-webkit-text-stroke: 0.5px #e28a05;
 				}
 #tribute-info {
 				margin-top: 120px;
@@ -44,7 +46,7 @@ nav img {
 #tribute-info ul {
 				list-style-type: none;
 				padding: 0;
-				justify-contents: center;
+				justify-content: center;
 				}
 .album {
 				position: relative;
@@ -53,7 +55,7 @@ nav img {
 				width: 100%;
 				}
 .album .album-overlay {
-				background-color: rgba(0,0,0,.5);
+				background-color: rgba(0,0,0,.9);
 				position: absolute;
 				top: 0;
 				width: 100%;
@@ -73,31 +75,29 @@ nav img {
 				font-size: 0.8em;
 				}
 .album-title {
-				font-weight: 700;
-				text-transform: uppercase;
-				margin-top: 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 5px;
 				}
 #videos {
-				margin-top: 10px;
+	text-align: center;
+				margin-top: 50px;
 				}
 #videos h3 {
-				text-align: center;
 				margin-bottom: 5px;
-				}
-#videos iframe {
-				/* width: 100%;
-				height: 220px; */
 				}
 .video-list {
 				margin-top: 10px;
 				}
 #follow {
 				text-align: center;
-				background-color: black;
+				background-color: #f25883;
+				margin-top: 20px;
 				padding: 5px 0;
 				}
 #follow h3 {
-				color: white;
+	font-weight: 500;
+				color: #fefefe;
 				}
 #follow ul {
 				list-style-type: none;
@@ -112,3 +112,86 @@ nav img {
 #follow li a {
 				color: white;
 				}
+/* for desktop */
+@media screen and (min-width: 992px) {
+	.gambar img {
+		margin-top: 0;
+		width: 100%;
+	}
+	#main h1 {
+		font-size: 4.5em;
+		margin-top: -550px;
+		text-shadow: 1px 1px 10px rgba(0,0,0, .3);
+	}
+	#main p {
+		font-size: 2.5em;
+		text-shadow: 1px 1px 10px rgba(0,0,0, .3);
+	}
+	#tribute-info {
+		margin-top: 420px;
+		margin-left: auto;
+		margin-right: auto;
+		align-items: center;
+	}
+	#tribute-info h3 {
+		text-align: center;
+		font-size: 2.75em;
+		margin-bottom: 30px;
+	}
+	#tribute-info ul {
+		display: flex;
+		justify-content: center;
+	}
+	#tribute-info li {
+		width: 200px;
+		height: 200px;
+		margin: 5px;
+	}
+	.album {
+		position: relative;
+		/* display: inline-block; */
+	}
+	
+	.album .album-img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.album .album-overlay {
+		background-color: rgba(0,0,0, .9);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		opacity: 0;
+		transition: 0.5s;
+	}
+	
+	.album .album-overlay:hover {
+		opacity: 1;
+	}
+	
+	.release-date {
+		font-size: 0.8em;
+	}
+	
+	.album-title {
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-top: 5px;
+	}
+
+	#videos h3 {
+		font-size: 2.75em !important;
+		margin-bottom: 10px;
+	}
+	.video-list {
+		margin-top: 30px;
+	}
+}
+
